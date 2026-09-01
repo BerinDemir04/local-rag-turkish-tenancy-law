@@ -1,0 +1,232 @@
+Last login: Mon Aug 31 03:05:48 on ttys000
+berke@Berkes-MacBook-Pro ~ % cd ~/local-rag
+berke@Berkes-MacBook-Pro local-rag % cd ~/local-rag
+berke@Berkes-MacBook-Pro local-rag % node -v
+v22.23.2
+berke@Berkes-MacBook-Pro local-rag % npm start
+
+> gas-field-local-rag@2.0.0 start
+> node src/server.js
+
+=== Gas Field RAG – Local Support Agent ===
+
+[ChatEngine] Initializing Foundry Local SDK...
+info: FoundryLocalCore[0]
+      Service configuration complete.
+[ChatEngine] Selected model: phi-4-mini
+[ChatEngine] Loading phi-4-mini into memory...
+[ChatEngine] Loading local embedding model...
+[Embedding] Model yükleniyor: Xenova/multilingual-e5-small
+[Server] UI available at http://127.0.0.1:3000
+[Server] Initializing model in background...
+
+[Embedding] Model hazır.
+[ChatEngine] RAG ready: 58 legal article chunks indexed.
+[Server] Fully offline – no outbound connections.
+
+[ChatEngine] Compact mode: OFF
+[ChatEngine] Processing legal question.
+[ChatEngine] Expanded legal query: Kirayı zamanında ödemezsem ev sahibi sözleşmeyi hemen bitirebilir mi kiraya veren kiracının temerrüdü muaccel kira bedelini veya yan gideri ödeme borcu kiraya veren kiracıya yazılı olarak süre verir ifa etmeme durumunda sözleşmeyi feshedeceğini bildirir
+[ChatEngine] Query embedding oluşturuluyor...
+[ChatEngine] Hybrid retrieval çalışıyor...
+[ChatEngine] 5 aday madde bulundu.
+[RAG 1] MADDE 315 | semantic: 0.9373 | lexical: 0.4996 | hybrid: 0.02705
+[RAG 2] MADDE 314 | semantic: 0.9081 | lexical: 0.1388 | hybrid: 0.02598
+[RAG 3] MADDE 346 | semantic: 0.8950 | lexical: 0.1876 | hybrid: 0.02508
+[RAG 4] MADDE 352 | semantic: 0.9021 | lexical: 0.1122 | hybrid: 0.02505
+[RAG 5] MADDE 325 | semantic: 0.9036 | lexical: - | hybrid: 0.01587
+[Sentence ranking] Top results:
+[SENT 1] MADDE 315 | semantic=0.9514 | final=0.9634 | Kiracının temerrüdü MADDE 315- Kiracı, kiralananın tesliminden sonra muaccel olan kira bedelini veya yan gideri ödeme bo
+[SENT 2] MADDE 314 | semantic=0.9089 | final=0.9179 | İfa zamanı MADDE 314- Kiracı, aksine sözleşme ve yerel âdet olmadıkça, kira bedelini ve gerekiyorsa yan giderleri, her a
+[SENT 3] MADDE 325 | semantic=0.9136 | final=0.9136 | Kiralananın sözleşmenin bitiminden önce geri verilmesi2 MADDE 325- Kiracı, sözleşme süresine veya fesih dönemine uymaksı
+[SENT 4] MADDE 325 | semantic=0.9085 | final=0.9085 | Kiracının bu sürenin geçmesinden önce kiraya verenden kabul etmesi beklenebilecek, ödeme gücüne sahip ve kira ilişkisini
+[SENT 5] MADDE 346 | semantic=0.9024 | final=0.9084 | Özellikle, kira bedelinin zamanında ödenmemesi hâlinde ceza koşulu ödeneceğine veya sonraki kira bedellerinin muaccel ol
+[SENT 6] MADDE 352 | semantic=0.9012 | final=0.9042 | Kiracıdan kaynaklanan sebeplerle MADDE 352- Kiracı, kiralananın teslim edilmesinden sonra, kiraya verene karşı, kiralana
+[SENT 7] MADDE 352 | semantic=0.9003 | final=0.9033 | Kiracı, bir yıldan kısa süreli kira sözleşmelerinde kira süresi içinde; bir yıl ve daha uzun süreli kira sözleşmelerinde
+[SENT 8] MADDE 315 | semantic=0.8862 | final=0.8982 | Bu süre, kiracıya yazılı bildirimin yapıldığı tarihi izleyen günden itibaren işlemeye başlar.
+[SENT 9] MADDE 352 | semantic=0.8912 | final=0.8942 | Kiracının veya birlikte yaşadığı eşinin aynı ilçe veya belde belediye sınırları içinde oturmaya elverişli bir konutu bul
+[SENT 10] MADDE 315 | semantic=0.8732 | final=0.8852 | Kiracıya verilecek süre en az on gün, konut ve çatılı işyeri kiralarında ise en az otuz gündür.
+[Article score] MADDE 315: sentence=0.9308 lexicalBonus=0.0250 total=0.9558
+[Article score] MADDE 314: sentence=0.9179 lexicalBonus=0.0069 total=0.9248
+[Article score] MADDE 325: sentence=0.9110 lexicalBonus=0.0000 total=0.9110
+[Article score] MADDE 346: sentence=0.8929 lexicalBonus=0.0094 total=0.9023
+[Article score] MADDE 352: sentence=0.9037 lexicalBonus=0.0056 total=0.9094
+[ChatEngine] Selected article: MADDE 315
+[FINAL SENT 1] 0.9634 | Kiracının temerrüdü MADDE 315- Kiracı, kiralananın tesliminden sonra muaccel olan kira bedelini veya yan gideri ödeme borcunu ifa etmezse, kiraya veren kiracıya yazılı olarak bir süre verip, bu sürede de ifa etmeme durumunda, sözleşmeyi feshedeceğini bildirebilir.
+[FINAL SENT 2] 0.8982 | Bu süre, kiracıya yazılı bildirimin yapıldığı tarihi izleyen günden itibaren işlemeye başlar.
+[FINAL SENT 3] 0.8852 | Kiracıya verilecek süre en az on gün, konut ve çatılı işyeri kiralarında ise en az otuz gündür.
+[ChatEngine] Phi raw answer: TBK MADDE 315'ten verildiği kanun metninde, kiracıya bir süre verilir ve bu süre içinde ifa etmeme durumunda kiraya veren kiracıya fesih talep edebilmesi belirtilmiştir. Ancak metnin kirayı zamanında ödemezsem ev sahibi sözleşmeyi hemen bitirebilir mi belirttiği metinde bulunmamaktadır.
+
+Bu konu hakkında elimdeki kanun metinlerinde yeterli bilgi bulunmamaktadır.
+[Quality] Phi refused despite retrieved context.
+[ChatEngine] Phi answer rejected. Using source-grounded fallback.
+[ChatEngine] Compact mode: OFF
+[ChatEngine] Processing legal question.
+[ChatEngine] Expanded legal query: Evden erken ayrılırsam yerime yeni bir kiracı bulmam borcumu sona erdirir mi kiralananın sözleşmenin bitiminden önce geri verilmesi
+[ChatEngine] Query embedding oluşturuluyor...
+[ChatEngine] Hybrid retrieval çalışıyor...
+[ChatEngine] 5 aday madde bulundu.
+[RAG 1] MADDE 325 | semantic: 0.9154 | lexical: 0.2840 | hybrid: 0.02705
+[RAG 2] MADDE 334 | semantic: 0.9004 | lexical: 0.2209 | hybrid: 0.02619
+[RAG 3] MADDE 352 | semantic: 0.9021 | lexical: 0.1378 | hybrid: 0.02613
+[RAG 4] MADDE 347 | semantic: 0.8909 | lexical: 0.2280 | hybrid: 0.02611
+[RAG 5] MADDE 310 | semantic: 0.8780 | lexical: 0.1391 | hybrid: 0.02465
+[Sentence ranking] Top results:
+[SENT 1] MADDE 325 | semantic=0.9112 | final=0.9232 | Kiracının bu sürenin geçmesinden önce kiraya verenden kabul etmesi beklenebilecek, ödeme gücüne sahip ve kira ilişkisini
+[SENT 2] MADDE 325 | semantic=0.9109 | final=0.9229 | Kiralananın sözleşmenin bitiminden önce geri verilmesi2 MADDE 325- Kiracı, sözleşme süresine veya fesih dönemine uymaksı
+[SENT 3] MADDE 347 | semantic=0.9059 | final=0.9089 | Kiraya veren, sözleşme süresinin bitimine dayanarak sözleşmeyi sona erdiremez.
+[SENT 4] MADDE 352 | semantic=0.8991 | final=0.9051 | Kiracının veya birlikte yaşadığı eşinin aynı ilçe veya belde belediye sınırları içinde oturmaya elverişli bir konutu bul
+[SENT 5] MADDE 352 | semantic=0.8985 | final=0.9045 | Kiracıdan kaynaklanan sebeplerle MADDE 352- Kiracı, kiralananın teslim edilmesinden sonra, kiraya verene karşı, kiralana
+[SENT 6] MADDE 334 | semantic=0.8879 | final=0.8969 | Kiracının, sözleşmenin sona ermesi hâlinde, sözleşmeye aykırı kullanmadan doğacak zararları giderme dışında, başkaca bir
+[SENT 7] MADDE 352 | semantic=0.8897 | final=0.8957 | Kiracı, bir yıldan kısa süreli kira sözleşmelerinde kira süresi içinde; bir yıl ve daha uzun süreli kira sözleşmelerinde
+[SENT 8] MADDE 334 | semantic=0.8811 | final=0.8901 | Genel olarak MADDE 334- Kiracı kiralananı ne durumda teslim almışsa, kira sözleşmesinin bitiminde o durumda geri vermekl
+[SENT 9] MADDE 347 | semantic=0.8865 | final=0.8895 | Konut ve çatılı işyeri kiralarında sözleşmenin sona ermesi > I.
+[SENT 10] MADDE 347 | semantic=0.8803 | final=0.8833 | Ancak, on yıllık uzama süresi sonunda kiraya veren, bu süreyi izleyen her uzama yılının bitiminden en az üç ay önce bild
+[Article score] MADDE 325: sentence=0.9231 lexicalBonus=0.0142 total=0.9373
+[Article score] MADDE 347: sentence=0.8992 lexicalBonus=0.0114 total=0.9106
+[Article score] MADDE 352: sentence=0.9048 lexicalBonus=0.0069 total=0.9117
+[Article score] MADDE 334: sentence=0.8935 lexicalBonus=0.0110 total=0.9045
+[Article score] MADDE 310: sentence=0.8615 lexicalBonus=0.0070 total=0.8684
+[ChatEngine] Selected article: MADDE 325
+[FINAL SENT 1] 0.9232 | Kiracının bu sürenin geçmesinden önce kiraya verenden kabul etmesi beklenebilecek, ödeme gücüne sahip ve kira ilişkisini devralmaya hazır yeni bir kiracı bulması hâlinde, kiracının kira sözleşmesinden doğan borçları sona erer.
+[FINAL SENT 2] 0.9229 | Kiralananın sözleşmenin bitiminden önce geri verilmesi2 MADDE 325- Kiracı, sözleşme süresine veya fesih dönemine uymaksızın kiralananı geri verdiği takdirde, kira sözleşmesinden doğan borçları, kiralananın benzer koşullarla kiraya verilebileceği makul bir süre için devam eder.
+[FINAL SENT 3] 0.8697 | Kiraya veren, yapmaktan kurtulduğu giderler ile kiralananı başka biçimde kullanmakla elde ettiği veya elde etmekten kasten kaçındığı yararları kira bedelinden indirmekle yükümlüdür.
+[ChatEngine] Phi raw answer: Bu konu hakkında elimdeki kanun metinlerinde yeterli bilgi bulunmamaktadır.
+[Quality] Phi refused despite retrieved context.
+[ChatEngine] Phi answer rejected. Using source-grounded fallback.
+[ChatEngine] Compact mode: OFF
+[ChatEngine] Processing legal question.
+[ChatEngine] Expanded legal query: Ev sahibi benden en fazla kaç aylık depozito isteyebilir kiraya veren güvence güvence bedeli kiracının güvence vermesi
+[ChatEngine] Query embedding oluşturuluyor...
+[ChatEngine] Hybrid retrieval çalışıyor...
+[ChatEngine] 5 aday madde bulundu.
+[RAG 1] MADDE 342 | semantic: 0.8945 | lexical: 0.2002 | hybrid: 0.02688
+[RAG 2] MADDE 332 | semantic: 0.8884 | lexical: 0.3021 | hybrid: 0.02678
+[RAG 3] MADDE 336 | semantic: 0.8727 | lexical: 0.0690 | hybrid: 0.02518
+[RAG 4] MADDE 344 | semantic: 0.8767 | lexical: 0.0653 | hybrid: 0.02490
+[RAG 5] MADDE 343 | semantic: 0.8615 | lexical: 0.0686 | hybrid: 0.02413
+[Sentence ranking] Top results:
+[SENT 1] MADDE 342 | semantic=0.8935 | final=0.9055 | Kiracının güvence vermesi2 MADDE 342- Konut ve çatılı işyeri kiralarında sözleşmeyle kiracıya güvence verme borcu getiri
+[SENT 2] MADDE 332 | semantic=0.8832 | final=0.8922 | Kiracının iflası MADDE 332- Kiracı, kiralananın tesliminden sonra iflas ederse kiraya veren, işleyecek kira bedelleri iç
+[SENT 3] MADDE 342 | semantic=0.8781 | final=0.8901 | Kiraya veren, kira sözleşmesinin sona ermesini izleyen üç ay içinde kiracıya karşı kira sözleşmesiyle ilgili bir dava aç
+[SENT 4] MADDE 332 | semantic=0.8795 | final=0.8885 | Kiraya veren, güvence verilmesi için kiracı ve iflas masasına yazılı olarak uygun bir süre verir.
+[SENT 5] MADDE 342 | semantic=0.8758 | final=0.8878 | Güvence olarak para veya kıymetli evrak verilmesi kararlaştırılmışsa kiracı, kiraya verenin onayı olmaksızın çekilmemek 
+[SENT 6] MADDE 332 | semantic=0.8786 | final=0.8876 | Bu süre içinde kendisine güvence verilmezse kiraya veren, sözleşmeyi herhangi bir fesih bildirim süresine uymaksızın hem
+[SENT 7] MADDE 344 | semantic=0.8831 | final=0.8861 | Taraflarca bu konuda bir anlaşma yapılıp yapılmadığına bakılmaksızın, beş yıldan uzun süreli veya beş yıldan sonra yenil
+[SENT 8] MADDE 344 | semantic=0.8785 | final=0.8815 | Taraflarca bu konuda bir anlaşma yapılmamışsa, kira bedeli, bir önceki kira yılının tüketici fiyat endeksindeki oniki ay
+[SENT 9] MADDE 336 | semantic=0.8732 | final=0.8792 | Konusu MADDE 336- Taşınmaz kiralarında kiraya veren, işlemiş bir yıllık ve işlemekte olan altı aylık kira bedelinin güve
+[SENT 10] MADDE 344 | semantic=0.8680 | final=0.8710 | Belirlenmesi MADDE 344 - Tarafların yenilenen kira dönemlerinde uygulanacak kira bedeline ilişkin anlaşmaları, bir öncek
+[Article score] MADDE 342: sentence=0.8978 lexicalBonus=0.0100 total=0.9078
+[Article score] MADDE 332: sentence=0.8903 lexicalBonus=0.0151 total=0.9054
+[Article score] MADDE 344: sentence=0.8838 lexicalBonus=0.0033 total=0.8871
+[Article score] MADDE 336: sentence=0.8624 lexicalBonus=0.0035 total=0.8659
+[Article score] MADDE 343: sentence=0.8603 lexicalBonus=0.0034 total=0.8637
+[ChatEngine] Selected article: MADDE 342
+[FINAL SENT 1] 0.9055 | Kiracının güvence vermesi2 MADDE 342- Konut ve çatılı işyeri kiralarında sözleşmeyle kiracıya güvence verme borcu getirilmişse, bu güvence üç aylık kira bedelini aşamaz.
+[FINAL SENT 2] 0.8901 | Kiraya veren, kira sözleşmesinin sona ermesini izleyen üç ay içinde kiracıya karşı kira sözleşmesiyle ilgili bir dava açtığını veya icra ya da iflas yoluyla takibe giriştiğini bankaya yazılı olarak bildirmemişse banka, kiracının istemi üzerine güvenceyi geri vermekle yükümlüdür.
+[FINAL SENT 3] 0.8878 | Güvence olarak para veya kıymetli evrak verilmesi kararlaştırılmışsa kiracı, kiraya verenin onayı olmaksızın çekilmemek üzere, parayı vadeli bir tasarruf hesabına yatırır, kıymetli evrakı ise bir bankaya depo eder.
+[ChatEngine] Phi raw answer: Bu konu hakkında elimdeki kanun metinlerinde yeterli bilgi bulunmamaktadır.
+[Quality] Phi refused despite retrieved context.
+[ChatEngine] Phi answer rejected. Using source-grounded fallback.
+[ChatEngine] Compact mode: OFF
+[ChatEngine] Processing legal question.
+[ChatEngine] Expanded legal query: Yeni kira döneminde ev sahibi kiraya istediği kadar zam yapabilir mi kiraya veren yenilenen kira dönemlerinde uygulanacak kira bedeli kira bedeline ilişkin anlaşma tüketici fiyat endeksindeki oniki aylık ortalamalara göre değişim oranı kira bedeli artış sınırı bir önceki kira yılının tüketici fiyat endeksindeki oniki aylık ortalamalara göre değişim oranı
+[ChatEngine] Query embedding oluşturuluyor...
+[ChatEngine] Hybrid retrieval çalışıyor...
+[ChatEngine] 5 aday madde bulundu.
+[RAG 1] MADDE 344 | semantic: 0.9194 | lexical: 0.5012 | hybrid: 0.02705
+[RAG 2] MADDE 343 | semantic: 0.8861 | lexical: 0.0849 | hybrid: 0.02619
+[RAG 3] MADDE 345 | semantic: 0.8826 | lexical: 0.1579 | hybrid: 0.02587
+[RAG 4] MADDE 307 | semantic: 0.8895 | lexical: 0.0574 | hybrid: 0.02541
+[RAG 5] MADDE 321 | semantic: 0.8838 | lexical: 0.0575 | hybrid: 0.02505
+[Sentence ranking] Top results:
+[SENT 1] MADDE 344 | semantic=0.9279 | final=0.9399 | Taraflarca bu konuda bir anlaşma yapılmamışsa, kira bedeli, bir önceki kira yılının tüketici fiyat endeksindeki oniki ay
+[SENT 2] MADDE 344 | semantic=0.9265 | final=0.9385 | Belirlenmesi MADDE 344 - Tarafların yenilenen kira dönemlerinde uygulanacak kira bedeline ilişkin anlaşmaları, bir öncek
+[SENT 3] MADDE 344 | semantic=0.9215 | final=0.9335 | Taraflarca bu konuda bir anlaşma yapılıp yapılmadığına bakılmaksızın, beş yıldan uzun süreli veya beş yıldan sonra yenil
+[SENT 4] MADDE 345 | semantic=0.9021 | final=0.9081 | Sözleşmede yeni kira döneminde kira bedelinin artırılacağına ilişkin bir hüküm varsa, yeni kira döneminin sonuna kadar a
+[SENT 5] MADDE 344 | semantic=0.8915 | final=0.9035 | Her beş yıldan sonraki kira yılında bu biçimde belirlenen kira bedeli, önceki fıkralarda yer alan ilkelere göre değiştir
+[SENT 6] MADDE 344 | semantic=0.8770 | final=0.8890 | Sözleşmede kira bedeli yabancı para olarak kararlaştırılmışsa 20/2/1930 tarihli ve 1567 sayılı Türk Parasının Kıymetini 
+[SENT 7] MADDE 307 | semantic=0.8848 | final=0.8878 | Kira bedelinin indirilmesi MADDE 307- Kiracı, kiralananın kullanımını etkileyen ayıpların varlığı hâlinde, bu ayıpların 
+[SENT 8] MADDE 343 | semantic=0.8788 | final=0.8878 | Genel olarak2 MADDE 343- Kira sözleşmelerinde kira bedelinin belirlenmesi dışında, kiracı aleyhine değişiklik yapılamaz.
+[SENT 9] MADDE 321 | semantic=0.8860 | final=0.8860 | Kiracı, aksine yazılı bir anlaşma yoksa, kiraya verenin rızasıyla yaptığı yenilik ve değişiklikler sebebiyle kiralananda
+[SENT 10] MADDE 345 | semantic=0.8781 | final=0.8841 | Ancak, bu dava, yeni dönemin başlangıcından en geç otuz gün önceki bir tarihte açıldığı ya da kiraya veren tarafından bu
+[Article score] MADDE 344: sentence=0.9392 lexicalBonus=0.0251 total=0.9642
+[Article score] MADDE 345: sentence=0.8961 lexicalBonus=0.0079 total=0.9040
+[Article score] MADDE 307: sentence=0.8878 lexicalBonus=0.0029 total=0.8907
+[Article score] MADDE 343: sentence=0.8878 lexicalBonus=0.0042 total=0.8920
+[Article score] MADDE 321: sentence=0.8827 lexicalBonus=0.0029 total=0.8856
+[ChatEngine] Selected article: MADDE 344
+[FINAL SENT 1] 0.9399 | Taraflarca bu konuda bir anlaşma yapılmamışsa, kira bedeli, bir önceki kira yılının tüketici fiyat endeksindeki oniki aylık ortalamalara göre değişim oranını geçmemek koşuluyla hâkim tarafından, kiralananın durumu göz önüne alınarak hakkaniyete göre belirlenir.
+[FINAL SENT 2] 0.9385 | Belirlenmesi MADDE 344 - Tarafların yenilenen kira dönemlerinde uygulanacak kira bedeline ilişkin anlaşmaları, bir önceki kira yılında tüketici fiyat endeksindeki oniki aylık ortalamalara göre değişim oranını geçmemek koşuluyla geçerlidir.
+[FINAL SENT 3] 0.9335 | Taraflarca bu konuda bir anlaşma yapılıp yapılmadığına bakılmaksızın, beş yıldan uzun süreli veya beş yıldan sonra yenilenen kira sözleşmelerinde ve bundan sonraki her beş yılın sonunda, yeni kira yılında uygulanacak kira bedeli, hâkim tarafından tüketici fiyat endeksindeki oniki aylık ortalamalara göre değişim oranı, kiralananın durumu ve emsal kira bedelleri göz önünde tutularak hakkaniyete uygun biçimde belirlenir.
+[ChatEngine] Phi raw answer: Bu konu hakkında elimdeki kanun metinlerinde yeterli bilgi bulunmamaktadır.
+[Quality] Phi refused despite retrieved context.
+[ChatEngine] Phi answer rejected. Using source-grounded fallback.
+[ChatEngine] Compact mode: OFF
+[ChatEngine] Processing legal question.
+[ChatEngine] Expanded legal query: Bir yıllık kira sözleşmem bitti diye ev sahibi beni doğrudan evden çıkarabilir mi kiraya veren belirli süreli kira sözleşmesinin süresinin bitimi kiraya veren sözleşme süresinin bitimine dayanarak sözleşmeyi sona erdiremez sözleşme aynı koşullarla bir yıl için uzatılmış sayılır
+[ChatEngine] Query embedding oluşturuluyor...
+[ChatEngine] Hybrid retrieval çalışıyor...
+[ChatEngine] 5 aday madde bulundu.
+[RAG 1] MADDE 347 | semantic: 0.9136 | lexical: 0.4882 | hybrid: 0.02705
+[RAG 2] MADDE 352 | semantic: 0.9132 | lexical: 0.1738 | hybrid: 0.02661
+[RAG 3] MADDE 300 | semantic: 0.9010 | lexical: 0.1710 | hybrid: 0.02619
+[RAG 4] MADDE 325 | semantic: 0.8927 | lexical: 0.1070 | hybrid: 0.02494
+[RAG 5] MADDE 350 | semantic: 0.8996 | lexical: 0.0944 | hybrid: 0.02478
+[Sentence ranking] Top results:
+[SENT 1] MADDE 347 | semantic=0.9185 | final=0.9305 | Kiraya veren, sözleşme süresinin bitimine dayanarak sözleşmeyi sona erdiremez.
+[SENT 2] MADDE 352 | semantic=0.9181 | final=0.9271 | Kiracı, bir yıldan kısa süreli kira sözleşmelerinde kira süresi içinde; bir yıl ve daha uzun süreli kira sözleşmelerinde
+[SENT 3] MADDE 352 | semantic=0.9129 | final=0.9219 | Kiracının veya birlikte yaşadığı eşinin aynı ilçe veya belde belediye sınırları içinde oturmaya elverişli bir konutu bul
+[SENT 4] MADDE 347 | semantic=0.9084 | final=0.9204 | Ancak, on yıllık uzama süresi sonunda kiraya veren, bu süreyi izleyen her uzama yılının bitiminden en az üç ay önce bild
+[SENT 5] MADDE 347 | semantic=0.9080 | final=0.9200 | Genel olarak MADDE 347- Konut ve çatılı işyeri kiralarında kiracı, belirli süreli sözleşmelerin süresinin bitiminden en 
+[SENT 6] MADDE 300 | semantic=0.9109 | final=0.9169 | Kararlaştırılan sürenin geçmesiyle herhangi bir bildirim olmaksızın sona erecek kira sözleşmesi belirli sürelidir; diğer
+[SENT 7] MADDE 352 | semantic=0.9010 | final=0.9100 | Kiracıdan kaynaklanan sebeplerle MADDE 352- Kiracı, kiralananın teslim edilmesinden sonra, kiraya verene karşı, kiralana
+[SENT 8] MADDE 325 | semantic=0.9016 | final=0.9046 | Kiralananın sözleşmenin bitiminden önce geri verilmesi2 MADDE 325- Kiracı, sözleşme süresine veya fesih dönemine uymaksı
+[SENT 9] MADDE 350 | semantic=0.8973 | final=0.8973 | Kiralananın yeniden inşası veya imarı amacıyla esaslı onarımı, genişletilmesi ya da değiştirilmesi gerekli ve bu işler s
+[SENT 10] MADDE 300 | semantic=0.8846 | final=0.8906 | Kira süresi MADDE 300- Kira sözleşmesi, belirli ve belirli olmayan bir süre için yapılabilir.
+[Article score] MADDE 347: sentence=0.9254 lexicalBonus=0.0244 total=0.9498
+[Article score] MADDE 352: sentence=0.9245 lexicalBonus=0.0087 total=0.9332
+[Article score] MADDE 300: sentence=0.9037 lexicalBonus=0.0086 total=0.9123
+[Article score] MADDE 325: sentence=0.8952 lexicalBonus=0.0054 total=0.9006
+[Article score] MADDE 350: sentence=0.8829 lexicalBonus=0.0047 total=0.8876
+[ChatEngine] Selected article: MADDE 347
+[FINAL SENT 1] 0.9305 | Kiraya veren, sözleşme süresinin bitimine dayanarak sözleşmeyi sona erdiremez.
+[FINAL SENT 2] 0.9204 | Ancak, on yıllık uzama süresi sonunda kiraya veren, bu süreyi izleyen her uzama yılının bitiminden en az üç ay önce bildirimde bulunmak koşuluyla, herhangi bir sebep göstermeksizin sözleşmeye son verebilir.
+[FINAL SENT 3] 0.9200 | Genel olarak MADDE 347- Konut ve çatılı işyeri kiralarında kiracı, belirli süreli sözleşmelerin süresinin bitiminden en az onbeş gün önce bildirimde bulunmadıkça, sözleşme aynı koşullarla bir yıl için uzatılmış sayılır.
+[ChatEngine] Phi raw answer: Bu konu hakkında elimdeki kanun metinlerinde yeterli bilgi bulunmamaktadır.
+[Quality] Phi refused despite retrieved context.
+[ChatEngine] Phi answer rejected. Using source-grounded fallback.
+[ChatEngine] Compact mode: OFF
+[ChatEngine] Processing legal question.
+[ChatEngine] Expanded legal query: Ev sahibi evi kendisi kullanacağını söyleyerek kira sözleşmesini sona erdirebilir mi kiraya veren kiraya verenin gereksinimi konut veya işyeri gereksinimi gereksinim sebebiyle kira sözleşmesinin sona erdirilmesi
+[ChatEngine] Query embedding oluşturuluyor...
+[ChatEngine] Hybrid retrieval çalışıyor...
+[ChatEngine] 5 aday madde bulundu.
+[RAG 1] MADDE 351 | semantic: 0.9185 | lexical: 0.3546 | hybrid: 0.02705
+[RAG 2] MADDE 350 | semantic: 0.9099 | lexical: 0.2802 | hybrid: 0.02661
+[RAG 3] MADDE 352 | semantic: 0.9050 | lexical: 0.1832 | hybrid: 0.02619
+[RAG 4] MADDE 347 | semantic: 0.8990 | lexical: 0.1228 | hybrid: 0.02547
+[RAG 5] MADDE 354 | semantic: 0.8952 | lexical: 0.1192 | hybrid: 0.02509
+[Sentence ranking] Top results:
+[SENT 1] MADDE 351 | semantic=0.9138 | final=0.9258 | Kiralananı sonradan edinen kişi, dilerse gereksinim sebebiyle sözleşmeyi sona erdirme hakkını, sözleşme süresinin bitimi
+[SENT 2] MADDE 351 | semantic=0.9091 | final=0.9211 | Yeni malikin gereksinimi MADDE 351- Kiralananı sonradan edinen kişi, onu kendisi, eşi, altsoyu, üstsoyu veya kanun gereğ
+[SENT 3] MADDE 352 | semantic=0.9137 | final=0.9197 | Kiracının veya birlikte yaşadığı eşinin aynı ilçe veya belde belediye sınırları içinde oturmaya elverişli bir konutu bul
+[SENT 4] MADDE 350 | semantic=0.8962 | final=0.9052 | Kiralananı kendisi, eşi, altsoyu, üstsoyu veya kanun gereği bakmakla yükümlü olduğu diğer kişiler için konut ya da işyer
+[SENT 5] MADDE 347 | semantic=0.9019 | final=0.9049 | Kiraya veren, sözleşme süresinin bitimine dayanarak sözleşmeyi sona erdiremez.
+[SENT 6] MADDE 352 | semantic=0.8954 | final=0.9014 | Kiracı, bir yıldan kısa süreli kira sözleşmelerinde kira süresi içinde; bir yıl ve daha uzun süreli kira sözleşmelerinde
+[SENT 7] MADDE 352 | semantic=0.8930 | final=0.8990 | Kiracıdan kaynaklanan sebeplerle MADDE 352- Kiracı, kiralananın teslim edilmesinden sonra, kiraya verene karşı, kiralana
+[SENT 8] MADDE 350 | semantic=0.8860 | final=0.8950 | Kiralananın yeniden inşası veya imarı amacıyla esaslı onarımı, genişletilmesi ya da değiştirilmesi gerekli ve bu işler s
+[SENT 9] MADDE 347 | semantic=0.8893 | final=0.8923 | Konut ve çatılı işyeri kiralarında sözleşmenin sona ermesi > I.
+[SENT 10] MADDE 354 | semantic=0.8889 | final=0.8889 | Dava sebeplerinin sınırlılığı2 MADDE 354- Dava yoluyla kira sözleşmesinin sona erdirilmesine ilişkin hükümler, kiracı al
+[Article score] MADDE 351: sentence=0.9235 lexicalBonus=0.0177 total=0.9412
+[Article score] MADDE 352: sentence=0.9105 lexicalBonus=0.0092 total=0.9197
+[Article score] MADDE 350: sentence=0.9001 lexicalBonus=0.0140 total=0.9141
+[Article score] MADDE 347: sentence=0.8986 lexicalBonus=0.0061 total=0.9047
+[Article score] MADDE 354: sentence=0.8889 lexicalBonus=0.0060 total=0.8949
+[ChatEngine] Selected article: MADDE 351
+[FINAL SENT 1] 0.9258 | Kiralananı sonradan edinen kişi, dilerse gereksinim sebebiyle sözleşmeyi sona erdirme hakkını, sözleşme süresinin bitiminden başlayarak bir ay içinde açacağı dava yoluyla da kullanabilir.
+[FINAL SENT 2] 0.9211 | Yeni malikin gereksinimi MADDE 351- Kiralananı sonradan edinen kişi, onu kendisi, eşi, altsoyu, üstsoyu veya kanun gereği bakmakla yükümlü olduğu diğer kişiler için konut veya işyeri gereksinimi sebebiyle kullanma zorunluluğu varsa, edinme tarihinden başlayarak bir ay içinde durumu kiracıya yazılı olarak bildirmek koşuluyla, kira sözleşmesini altı ay sonra açacağı bir davayla sona erdirebilir.
+[ChatEngine] Phi raw answer: TBK MADDE 351; Kiralananı sonradan edinen kişi, kiralanan konutun kendisi için gereksinim sebebiyle kullanma zorunluluğu varsa, kiracıya sonraki ay içinde sonlandırma talep etmesiyle sonlandırabilir. Ancak, sonraki ay içinde sonlandırma talep etmesiyle sonlandırmak yerine sonraki ay içinde sonlandırmak için sonraki ay içinde sonlandırma talep etmesiyle sonlandırma hususu da tanımlanmıştır. Bu husus sonraki ay içinde sonlandırma talep etmesiyle sonlandırma hususuna atıfta bulun
+[Quality] Repetition detected.
+[ChatEngine] Phi answer rejected. Using source-grounded fallback.
+

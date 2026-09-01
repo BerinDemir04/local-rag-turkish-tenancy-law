@@ -40,3 +40,4 @@ tmp/
 # Foundry Local model cache (large files)
 .foundry/
 models/
+.Rhistory
